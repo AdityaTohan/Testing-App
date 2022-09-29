@@ -15,8 +15,8 @@ interface Currency {
 })
 export class AppComponent {
   title = 'Demo';
-  selectedCountryFrom= '';
-  selectedCountryTo='';
+  currencyFrom= '';
+  currencyTo='';
   value='';
   countryList = [];
   currency: Currency[];
@@ -31,12 +31,12 @@ export class AppComponent {
    
 
         this.currency = [
-          {name: '$ USD'},
-          {name: '₹ INR'},
-          {name: '€ EUR'},
-          {name: '£ UK'},
-          {name: '¥ CNY'},
-          {name: '¥ YEN'}
+          {name: 'USD'},
+          {name: 'INR'},
+          {name: 'EUR'},
+          {name: 'UK'},
+          {name: 'CNY'},
+          {name: 'YEN'}
       ];
 
   }
@@ -57,8 +57,8 @@ export class AppComponent {
 
   convert(){
     let obj={
-      selectedCountryFrom: this.selectedCountryFrom,
-      selectedCountryTo: this.selectedCountryTo,
+      selectedCountryFrom: this.currencyFrom,
+      selectedCountryTo: this.currencyTo,
       value: this.value,
     }
     console.log(obj)
