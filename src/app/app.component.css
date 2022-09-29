@@ -1,0 +1,20 @@
+.border{
+    padding:8%
+}
+
+.container{
+    margin: auto;
+    width: 34%;
+    background-color:rgb(128, 136, 185);
+    font-size: 20px;
+    color:white;
+}
+.grid{
+    padding:20px;
+}
+button{
+    font-size: 15px;
+}
+.heading{
+    background-color: rgb(62, 51, 84);
+}

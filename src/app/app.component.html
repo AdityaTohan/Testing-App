@@ -1,1 +1,33 @@
-<button type="button" class="btn btn-primary">Primary</button>
+<div class="border">
+    <div class="container heading">
+            <h1>CURRENCY EXCHANGE</h1>
+    </div>
+    <div class="container">
+        <div class="grid p-fluid">
+            <p style="text-align:center"> Value  </p>  
+            <p-inputNumber inputId="integeronly" class="p-inputtext-lg" [(ngModel)]="value"></p-inputNumber>
+        </div>
+
+        <div class="grid p-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                <span> From  </span>  
+                <p-dropdown [options]="currency"  placeholder="Select Currency" [(ngModel)]="selectedCountryFrom" optionLabel="name"
+                [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-6">
+                <span>  To  </span> 
+                <p-dropdown  [options]="currency"  placeholder="Select Currency"  [(ngModel)]="selectedCountryTo" optionLabel="name"
+                [showClear]="true"></p-dropdown>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid p-fluid">
+            <p style="text-align:center">{{response}}</p>
+        </div>
+        <div class="grid p-fluid" > 
+            <button pButton pRipple type="button" styleClass="p-button-lg" label="Convert" class="p-button-warning" (click)="convert()"></button>
+        </div>
+    </div>
+</div>
