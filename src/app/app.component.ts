@@ -5,7 +5,7 @@ import { ApiService } from './services/api.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 interface Currency {
-  name: string
+  name: any;
 }
 
 @Component({
@@ -15,12 +15,12 @@ interface Currency {
 })
 export class AppComponent {
   title = 'Demo';
-  currencyFrom= '';
-  currencyTo='';
+  currencyFrom:any;
+  currencyTo:any;
   value='';
   countryList = [];
   currency: Currency[];
-  response='';
+  response: any;
   
 
 
@@ -40,31 +40,17 @@ export class AppComponent {
       ];
 
   }
-
-  // ngOnInit(){
-  //   this.getCountryList();
-  // }
-
-  // getCountryList(){
-  //   this.apiService.getCountryList().subscribe(
-  //     response => {
-  //       this.countryList = response;
-  //     }
-  //   );
-  // }
-
   
-
   convert(){
     let obj={
-      selectedCountryFrom: this.currencyFrom,
-      selectedCountryTo: this.currencyTo,
+      currencyFrom: this.currencyFrom.name,
+      currencyTo: this.currencyTo.name,
       value: this.value,
     }
     console.log(obj)
     this.apiService.convertApi(obj).subscribe(
       response => {
-        response=this.response;
+        this.response=response;
       }
     )
   }
